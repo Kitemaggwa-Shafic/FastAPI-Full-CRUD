@@ -1,4 +1,6 @@
 from fastapi import FastAPI
+#HTML reponse for humana
+from fastapi.responses import HTMLResponse
 
 
 # this app will be used to defie our routes
@@ -22,12 +24,14 @@ posts: list[dict] = [
     },
 ]
 
-@app.get("/")
+# Updating my route to return HTML reponses in the decorator 
+@app.get("/", response_class=HTMLResponse)
 def home():
-    return {"message": "HEllo World!!"}
+    return f"<h1>{posts[0]['title']}</h1>"
+    #return {"message": "HEllo World!!"}
 
 
-
+#get posts route
 @app.get("/api/posts")
 def get_posts():
     return posts
