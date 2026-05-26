@@ -1,11 +1,12 @@
-from fastapi import FastAPI
-#HTML reponse for humana
-from fastapi.responses import HTMLResponse
+from fastapi import FastAPI, Request
+# using jinja2templates in python 
+from fastapi.templating import Jinja2Templates
 
 
 # this app will be used to defie our routes
 app = FastAPI()
 
+templates = Jinja2Templates(directory = "templates")
 
 posts: list[dict] = [
     {
@@ -25,13 +26,13 @@ posts: list[dict] = [
 ]
 
 # Updating my route to return HTML reponses in the decorator 
-@app.get("/", response_class=HTMLResponse)
+@app.get("/")
 # i have te same route returning the same data, so we are going to hide the 
 # HTML routes from our API data and only appear in browser (include_in_schema=False),
 # so now /posts routes wont be seen in API but oly in browser 
-@app.get("/posts", response_class=HTMLResponse, include_in_schema=False)
-def home():
-    return f"<h1>{posts[0]['title']}</h1>"
+@app.get("/posts", include_in_schema=False)
+def home(request:Request):
+    return templates.TemplateResponse(request, "home.html")
     #return {"message": "HEllo World!!"}
 
 
