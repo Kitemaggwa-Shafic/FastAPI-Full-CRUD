@@ -33,7 +33,7 @@ posts: list[dict] = [
 @app.get("/posts", include_in_schema=False)
 def home(request:Request):
     #having arequest and 
-    return templates.TemplateResponse(request, "home.html", {"posts": posts })
+    return templates.TemplateResponse(request, "home.html", {"posts": posts, "title": "Home"})
     #return {"message": "HEllo World!!"}
 
 
