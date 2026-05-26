@@ -1,18 +1,7 @@
-
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>
-            {% if title %}
-                FastAPI CRUD - {{ title }}
-            {% else %}
-                FastAPI CRUD
-            {% endif %}
-            </title>
-    </head>
-    <body>
-        <h1>Home Page</h1>
-    <!-- looping through the posts we have accessing their data -->>
+{% extends "layout.html" %}
+   
+{% block content %} <!-- this code extends from layout.html and defines the content block that will be rendered in home.html -->
+        <!-- looping through the posts we have accessing their data -->
         {% for post in posts %}
             <div>
                 <h2>{{ post.title }}</h2>
@@ -21,5 +10,4 @@
                 <p>=========================</p>
             </div>
         {% endfor %}
-    </body>
-</html>
+{% endblock %}
