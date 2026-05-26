@@ -32,7 +32,8 @@ posts: list[dict] = [
 # so now /posts routes wont be seen in API but oly in browser 
 @app.get("/posts", include_in_schema=False)
 def home(request:Request):
-    return templates.TemplateResponse(request, "home.html")
+    #having arequest and 
+    return templates.TemplateResponse(request, "home.html", {"posts": posts })
     #return {"message": "HEllo World!!"}
 
 

@@ -4,6 +4,14 @@
     <head><title>FastAPI CRUD</title></head>
     <body>
         <h1>Home Page</h1>
-        <p>Jinja 2 Templating and Python</p>
+    <!-- looping through the posts we have accessing their data -->>
+        {% for post in posts %}
+            <div>
+                <h2>{{ post.title }}</h2>
+                <p>{{ post.content }}</p>
+                <p>By {{ post.author }} on {{ post.date_posted }}</p>
+                <p>=========================</p>
+            </div>
+        {% endfor %}
     </body>
 </html>
