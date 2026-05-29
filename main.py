@@ -1,10 +1,15 @@
 from fastapi import FastAPI, Request
 # using jinja2templates in python 
 from fastapi.templating import Jinja2Templates
+#link for statis file to use in project
+from fastapi.staticfiles import StaticFiles
 
 
 # this app will be used to defie our routes
 app = FastAPI()
+
+# mount method with 3 parameters "url path, static file instatnce to dir, name to ref in template"
+app.mount("/static", StaticFiles(directory="static"), name="static")
 
 templates = Jinja2Templates(directory = "templates")
 

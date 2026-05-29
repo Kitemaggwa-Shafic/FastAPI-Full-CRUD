@@ -1,0 +1,46 @@
+/* Navbar background */
+.custom-navbar{
+    background: linear-gradient(90deg, #1e3c72, #2a5298);
+    padding: 15px 30px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+/* Brand styling */
+.custom-navbar .navbar-brand{
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.custom-navbar .navbar-brand:hover{
+    color: #ffd700;
+}
+
+/* Nav links */
+.custom-navbar .nav-link{
+    color: white;
+    margin-left: 15px;
+    font-weight: 500;
+    transition: 0.3s ease;
+}
+
+/* Hover effect */
+.custom-navbar .nav-link:hover{
+    color: #ffd700;
+    transform: translateY(-2px);
+}
+
+/* Active link */
+.custom-navbar .nav-link.active{
+    border-bottom: 2px solid #ffd700;
+}
+
+/* Mobile menu icon */
+.navbar-toggler{
+    border: none;
+}
+
+.navbar-toggler:focus{
+    box-shadow: none;
+}
