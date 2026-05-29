@@ -26,7 +26,7 @@ posts: list[dict] = [
         "author": "Slyvie",
         "title": "Pythn Training",
         "content": "Python is an easy language to learn by anyone as long you do practice and keep up with principles",
-        "date_posted": "23 May 2026",
+        "date_posted": "02 Feb 1999",
     },
 ]
 
@@ -40,6 +40,17 @@ def home(request:Request):
     #having arequest and 
     return templates.TemplateResponse(request, "home.html", {"posts": posts, "title": "Home"})
     #return {"message": "HEllo World!!"}
+
+
+
+# getting a single post
+@app.get("/posts/{post_id}", include_in_schema=False)
+def view_a_post(request:Request, post_id: int):
+    for post in posts:
+        if post.get("id")== post_id:
+            return templates.TemplateResponse(request, "post.html", {"post": post, "title": post["title"]})
+    raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Post not found")
+
 
 
 #get posts route

@@ -1,0 +1,13 @@
+{% extends "layout.html" %}
+{% block content %}
+    <div class="post-container">
+        <div class="post-card">
+            <div class="author">{{ post.title }}</div>
+            <div class="title"> <img src="{{url_for('static', path='images/fic.png')}}" class="author-img">
+                By {{ post.author }}</div>
+
+            <div class="date">{{ post.date_posted }}</div>
+            <div class="message">By {{ post.content }}</div>
+        </div>
+    </div>
+{% endblock %}
