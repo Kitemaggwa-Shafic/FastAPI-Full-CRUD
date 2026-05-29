@@ -5,8 +5,8 @@
         <!-- looping through the posts we have accessing their data -->
         {% for post in posts %}
             
-             <div class="posts-container">
-                <div class="post-card">
+        <div class="posts-container">
+            <div class="post-card">
                 <div class="author"><a href="{{ url_for('view_a_post', post_id=post.id) }}">{{ post.title }}</a></div>
                 <div class="title"> <img src="{{url_for('static', path='images/fic.png')}}" class="author-img">
                     By {{ post.author }}</div>
@@ -17,6 +17,6 @@
 
         </div>
 
-    </div>
+        
         {% endfor %}
 {% endblock %}
