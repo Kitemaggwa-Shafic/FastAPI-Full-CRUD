@@ -3,14 +3,14 @@ posts: list[dict] = [
         "id": 1,
         "author": "Profic",
         "title": "FastAPI Training",
-        "content": "FastAPI documentation made easy",
+        "content": "FastAPI documentation made easy sample content to be added here in",
         "date_posted": "23 May 2026",
     },
     {
         "id": 2,
         "author": "Slyvie",
-        "title": "Pythn Training",
-        "content": "Python is an easy language made easy",
+        "title": "Python Training",
+        "content": "Python is an easy language to learn by anyone as long you do practice and keep up with principles",
         "date_posted": "23 May 2026",
     },
 ]
