@@ -1,4 +1,4 @@
-from fastapi import FastAPI, Request
+from fastapi import FastAPI, Request, HTTPException, status
 # using jinja2templates in python 
 from fastapi.templating import Jinja2Templates
 #link for statis file to use in project
@@ -46,3 +46,16 @@ def home(request:Request):
 @app.get("/api/posts")
 def get_posts():
     return posts
+
+
+# getting a single post
+@app.get("/api/posts/{post_id}")
+# we are using path parameter to get a specific post by its id and shld be an int type, and we are also using 
+# HTTPException to handle the case when the post is not found
+def get_post(post_id: int):
+    for post in posts:
+        if post["id"] == post_id:
+            return post
+    # we are using raising HTTPException to return a 404 error if the post is not found
+    raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Post not found")
+ 
