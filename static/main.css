@@ -36,14 +36,14 @@
 
 /* Register Button */
 .register-btn{
-    background:#ffd700;
-    color:#1e3c72;
+    border:1px solid white;
+    color:white;
     padding:8px 20px;
-    border-radius:8px;
-    font-weight:bold;
+    border-radius:8px; 
 }
 
 .register-btn:hover{
+    background: white;;
     opacity:0.9;
 }
 
