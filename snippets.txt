@@ -9,7 +9,11 @@ posts: list[dict] = [
     {
         "id": 2,
         "author": "Slyvie",
+<<<<<<< HEAD
         "title": "Pythn Training",
+=======
+        "title": "Python Training",
+>>>>>>> 22d1e340c1c5fb282f3b6bb5bce001150fe91370
         "content": "Python is an easy language to learn by anyone as long you do practice and keep up with principles",
         "date_posted": "23 May 2026",
     },

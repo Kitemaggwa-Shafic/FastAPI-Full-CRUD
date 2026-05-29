@@ -43,8 +43,9 @@
 }
 
 .register-btn:hover{
-    background: white;;
+    background: white;
     opacity:0.9;
+    color:#1e3c72;
 }
 
 /* COntaine CSS */
