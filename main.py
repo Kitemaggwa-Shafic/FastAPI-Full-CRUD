@@ -26,11 +26,11 @@ posts: list[dict] = [
 ]
 
 # Updating my route to return HTML reponses in the decorator 
-@app.get("/")
+@app.get("/", include_in_schema=False, name="home")
 # i have te same route returning the same data, so we are going to hide the 
 # HTML routes from our API data and only appear in browser (include_in_schema=False),
 # so now /posts routes wont be seen in API but oly in browser 
-@app.get("/posts", include_in_schema=False)
+@app.get("/posts", include_in_schema=False, name="posts")
 def home(request:Request):
     #having arequest and 
     return templates.TemplateResponse(request, "home.html", {"posts": posts, "title": "Home"})
