@@ -16,25 +16,37 @@
     </head>
     <body>
 
-        <nav class="navbar navbar-expand-lg custom-navbar">
+      <nav class="navbar navbar-expand-lg custom-navbar">
     <div class="container-fluid">
+
+        <!-- Brand -->
         <a class="navbar-brand">FASTAPI PYTHON</a>
 
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" 
-        data-bs-target="#navbarNavAltMarkup">
+        <!-- Mobile Toggle -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup">
             <span class="navbar-toggler-icon"></span>
         </button>
 
+        <!-- Navbar Content -->
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-            <div class="navbar-nav ms-auto">
+
+            <!-- LEFT SIDE LINKS -->
+            <div class="navbar-nav">
                 <a class="nav-link active" href="{{ url_for('home') }}">Home</a>
                 <a class="nav-link" href="#">Features</a>
                 <a class="nav-link" href="#">Pricing</a>
                 <a class="nav-link disabled">Disabled</a>
             </div>
+
+            <!-- RIGHT SIDE BUTTONS -->
+            <div class="ms-auto d-flex gap-2">
+                <a href="#" class="btn btn-outline-light mb-2 mb-md-0 me-md-2 login-btn">Login</a>
+                <a href="#" class="btn register-btn">Register</a>
+            </div>
+
         </div>
     </div>
-</nav>
+        </nav>
         {% block content %}
         {% endblock %}
     </body>

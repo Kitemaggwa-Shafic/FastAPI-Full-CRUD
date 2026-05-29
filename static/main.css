@@ -1,46 +1,111 @@
-/* Navbar background */
 .custom-navbar{
     background: linear-gradient(90deg, #1e3c72, #2a5298);
     padding: 15px 30px;
     box-shadow: 0 4px 10px rgba(0,0,0,0.15);
 }
 
-/* Brand styling */
-.custom-navbar .navbar-brand{
-    color: white;
-    font-size: 1.5rem;
-    font-weight: bold;
-    letter-spacing: 1px;
+.navbar-brand{
+    color:white;
+    font-size:1.5rem;
+    font-weight:bold;
 }
 
-.custom-navbar .navbar-brand:hover{
-    color: #ffd700;
+.nav-link{
+    color:white !important;
+    margin-right:15px;
+    font-weight:500;
+    transition:0.3s;
 }
 
-/* Nav links */
-.custom-navbar .nav-link{
-    color: white;
-    margin-left: 15px;
-    font-weight: 500;
-    transition: 0.3s ease;
+.nav-link:hover{
+    color:#ffd700 !important;
 }
 
-/* Hover effect */
-.custom-navbar .nav-link:hover{
-    color: #ffd700;
-    transform: translateY(-2px);
+/* Login Button */
+.login-btn{
+    border:1px solid white;
+    color:white;
+    padding:8px 20px;
+    border-radius:8px;
 }
 
-/* Active link */
-.custom-navbar .nav-link.active{
-    border-bottom: 2px solid #ffd700;
+.login-btn:hover{
+    background:white;
+    color:#1e3c72;
 }
 
-/* Mobile menu icon */
-.navbar-toggler{
-    border: none;
+/* Register Button */
+.register-btn{
+    background:#ffd700;
+    color:#1e3c72;
+    padding:8px 20px;
+    border-radius:8px;
+    font-weight:bold;
 }
 
-.navbar-toggler:focus{
-    box-shadow: none;
+.register-btn:hover{
+    opacity:0.9;
 }
+
+/* COntaine CSS */
+/* Container holding all posts */
+.posts-container{
+    display:grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px,1fr));
+    gap:20px;
+    padding:30px;
+}
+
+/* Each post card */
+.post-card{
+    display:grid;
+    grid-template-areas:
+        "author date"
+        "message message";
+
+    grid-template-columns: 1fr auto;
+
+    background:white;
+    padding:20px;
+    border-radius:12px;
+    box-shadow:0 4px 12px rgba(0,0,0,0.1);
+
+    transition:0.3s;
+    width: 100%;
+    max-width: 450px;   /* 👈 makes card smaller */
+    margin: auto;      /* centers it */
+}
+
+.post-card:hover{
+    transform:translateY(-4px);
+}
+
+/* Grid Areas */
+.author{
+    grid-area:author;
+    font-weight:bold;
+    font-size:1.1rem;
+    color:#1e3c72;
+}
+
+.date{
+    grid-area:date;
+    color:gray;
+    font-size:0.85rem;
+    text-align:right;
+}
+
+.message{
+    grid-area:message;
+    margin-top:15px;
+    line-height:1.6;
+    color:#333;
+}
+.title{
+    grid-area:title;
+    margin-top:12px;
+    font-size:1.3rem;
+    font-weight:700;
+    color:#222;
+}
+

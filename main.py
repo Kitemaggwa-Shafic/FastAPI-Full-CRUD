@@ -18,7 +18,7 @@ posts: list[dict] = [
         "id": 1,
         "author": "Profic",
         "title": "FastAPI Training",
-        "content": "FastAPI documentation made easy",
+        "content": "FastAPI documentation made easy this is content",
         "date_posted": "23 May 2026",
     },
     {
